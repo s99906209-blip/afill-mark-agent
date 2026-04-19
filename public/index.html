@@ -1,0 +1,214 @@
+>!DOCTYPE html>
+  >html lang="en">
+  >head>
+  >meta charset="UTF-8">
+  >meta name="viewport" content="width=device-width, initial-scale=1.0">
+  >title>Afill Mark Agent - AI-Powered Affiliate Marketing Automation>/title>
+  >style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+  :root{--bg:#0B1224;--blue:#3B82F6;--cyan:#06B6D4;--gold:#F59E0B;--text:#E2E8F0;--muted:#94A3B8;--card:rgba(30,41,59,0.7);--radius:16px}
+  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+a{color:var(--cyan);text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;padding:16px 0;z-index:100;backdrop-filter:blur(20px);background:rgba(11,18,36,0.8);border-bottom:1px solid rgba(59,130,246,0.1)}
+nav .container{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:1.4rem;font-weight:800;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{color:var(--muted);font-size:0.9rem;font-weight:500;transition:color 0.3s}
+.nav-links a:hover{color:var(--text)}
+  .btn{padding:10px 24px;border-radius:8px;font-weight:600;font-size:0.9rem;border:none;cursor:pointer;transition:all 0.3s}
+.btn-primary{background:linear-gradient(135deg,var(--blue),var(--cyan));color:white}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(59,130,246,0.4)}
+.btn-outline{border:1px solid var(--blue);color:var(--blue);background:transparent}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding-top:80px}
+.hero-content{text-align:center;max-width:800px;margin:0 auto;position:relative;z-index:2}
+.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;line-height:1.1;margin-bottom:24px;background:linear-gradient(135deg,#fff,var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .hero p{font-size:1.25rem;color:var(--muted);margin-bottom:40px;line-height:1.7}
+.hero-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.hero-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(59,130,246,0.15),transparent 70%);pointer-events:none}
+
+/* FEATURES */
+.features{padding:120px 0}
+.section-title{text-align:center;margin-bottom:64px}
+.section-title h2{font-size:2.5rem;font-weight:800;margin-bottom:16px}
+.section-title p{color:var(--muted);font-size:1.1rem;max-width:600px;margin:0 auto}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:24px}
+.feature-card{background:var(--card);border:1px solid rgba(59,130,246,0.1);border-radius:var(--radius);padding:32px;transition:all 0.3s}
+.feature-card:hover{border-color:var(--blue);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.3)}
+.feature-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:20px}
+.feature-card h3{font-size:1.25rem;font-weight:700;margin-bottom:12px}
+.feature-card p{color:var(--muted);line-height:1.7}
+.fi-1{background:rgba(59,130,246,0.15)}
+  .fi-2{background:rgba(6,182,212,0.15)}
+.fi-3{background:rgba(245,158,11,0.15)}
+.fi-4{background:rgba(139,92,246,0.15)}
+.fi-5{background:rgba(34,197,94,0.15)}
+.fi-6{background:rgba(239,68,68,0.15)}
+
+/* HOW IT WORKS */
+.how-it-works{padding:120px 0;background:rgba(30,41,59,0.3)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:48px}
+.step{text-align:center;position:relative}
+.step-num{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--cyan));display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:800;margin:0 auto 24px;color:white}
+.step h3{font-size:1.2rem;font-weight:700;margin-bottom:12px}
+.step p{color:var(--muted);line-height:1.6}
+
+/* METRICS */
+.metrics{padding:80px 0}
+.metrics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.metric{text-align:center;padding:32px}
+.metric .num{font-size:3rem;font-weight:900;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.metric .label{color:var(--muted);margin-top:8px;font-size:0.95rem}
+
+/* PRICING */
+.pricing{padding:120px 0}
+  .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.price-card{background:var(--card);border:1px solid rgba(59,130,246,0.1);border-radius:var(--radius);padding:40px 32px;position:relative;transition:all 0.3s}
+.price-card.popular{border-color:var(--blue);transform:scale(1.05)}
+.price-card.popular::before{content:'Popular';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--blue),var(--cyan));color:white;padding:4px 16px;border-radius:20px;font-size:0.8rem;font-weight:700}
+.price-card h3{font-size:1.3rem;font-weight:700;margin-bottom:8px}
+.price-card .price{font-size:3rem;font-weight:900;margin:16px 0}
+.price-card .price span{font-size:1rem;color:var(--muted);font-weight:400}
+.price-card ul{list-style:none;margin:24px 0;text-align:left}
+.price-card li{padding:8px 0;color:var(--muted);font-size:0.95rem}
+.price-card li::before{content:'\2713';color:var(--cyan);margin-right:8px;font-weight:700}
+.price-card .btn{width:100%;margin-top:16px;padding:14px}
+
+/* CTA */
+.cta{padding:120px 0;text-align:center;position:relative}
+.cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(59,130,246,0.12),transparent 70%);pointer-events:none}
+.cta h2{font-size:2.5rem;font-weight:800;margin-bottom:16px;position:relative;z-index:2}
+.cta p{color:var(--muted);font-size:1.1rem;margin-bottom:40px;position:relative;z-index:2}
+
+/* FOOTER */
+footer{padding:64px 0 32px;border-top:1px solid rgba(59,130,246,0.1)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand .logo{margin-bottom:16px;display:inline-block}
+.footer-brand p{color:var(--muted);font-size:0.9rem;line-height:1.7}
+.footer-col h4{font-size:0.9rem;font-weight:700;margin-bottom:16px;text-transform:uppercase;letter-spacing:1px}
+.footer-col a{display:block;color:var(--muted);font-size:0.9rem;padding:4px 0;transition:color 0.3s}
+.footer-col a:hover{color:var(--text)}
+  .footer-bottom{text-align:center;color:var(--muted);font-size:0.85rem;padding-top:32px;border-top:1px solid rgba(59,130,246,0.05)}
+
+@media(max-width:768px){
+.nav-links{display:none}
+.features-grid,.steps,.pricing-grid{grid-template-columns:1fr}
+.metrics-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+.price-card.popular{transform:scale(1)}
+}
+>/style>
+  >/head>
+  >body>
+
+  >nav>>div class="container">
+  >div class="logo">AFILL MARK AGENT>/div>
+  >div class="nav-links">
+  >a href="#features">Features>/a>
+  >a href="#how">How It Works>/a>
+  >a href="#pricing">Pricing>/a>
+  >button class="btn btn-primary">Get Started>/button>
+  >/div>
+  >/div>>/nav>
+
+  >section class="hero">
+  >div class="hero-glow">>/div>
+  >div class="container hero-content">
+  >h1>AI-Powered Affiliate Marketing on Autopilot>/h1>
+  >p>Discover products, generate content, deploy campaigns, and optimize performance  all powered by autonomous AI agents that work 24/7.>/p>
+  >div class="hero-buttons">
+  >button class="btn btn-primary" style="padding:16px 40px;font-size:1.1rem">Start Free Trial>/button>
+  >button class="btn btn-outline" style="padding:16px 40px;font-size:1.1rem">Watch Demo>/button>
+  >/div>
+  >/div>
+  >/section>
+
+  >section class="features" id="features">>div class="container">
+  >div class="section-title">
+  >h2>Everything You Need to Scale>/h2>
+  >p>Six autonomous AI agents working together to maximize your affiliate revenue.>/p>
+  >/div>
+  >div class="features-grid">
+  >div class="feature-card">>div class="feature-icon fi-1">&#128269;>/div>>h3>Product Discovery>/h3>>p>AI scans thousands of affiliate programs to find the highest-converting products matched to your niche and audience.>/p>>/div>
+  >div class="feature-card">>div class="feature-icon fi-2">&#9997;>/div>>h3>Content Generation>/h3>>p>Automatically create reviews, comparisons, and promotional content optimized for SEO and conversions.>/p>>/div>
+  >div class="feature-card">>div class="feature-icon fi-3">&#128200;>/div>>h3>Analytics Engine>/h3>>p>Real-time performance tracking with predictive insights. Know what's working before your competitors do.>/p>>/div>
+  >div class="feature-card">>div class="feature-icon fi-4">&#128640;>/div>>h3>Multi-Channel Deploy>/h3>>p>Push campaigns to blogs, social media, email, and ads simultaneously with one click.>/p>>/div>
+  >div class="feature-card">>div class="feature-icon fi-5">&#9878;>/div>>h3>Split Testing>/h3>>p>AI-driven A/B testing that continuously optimizes headlines, CTAs, and landing pages for maximum ROI.>/p>>/div>
+  >div class="feature-card">>div class="feature-icon fi-6">&#128737;>/div>>h3>Compliance Guard>/h3>>p>Automatic FTC disclosure insertion, link cloaking, and policy compliance monitoring across all channels.>/p>>/div>
+  >/div>
+  >/div>>/section>
+
+  >section class="how-it-works" id="how">>div class="container">
+  >div class="section-title">
+  >h2>How It Works>/h2>
+  >p>Three steps to fully automated affiliate marketing.>/p>
+  >/div>
+  >div class="steps">
+  >div class="step">>div class="step-num">1>/div>>h3>Connect Your Niche>/h3>>p>Tell the agent your niche, audience, and goals. It maps the entire affiliate landscape for you.>/p>>/div>
+  >div class="step">>div class="step-num">2>/div>>h3>AI Builds Campaigns>/h3>>p>Autonomous agents create content, select products, and build multi-channel campaigns in minutes.>/p>>/div>
+  >div class="step">>div class="step-num">3>/div>>h3>Scale & Optimize>/h3>>p>Monitor performance in real-time while AI continuously optimizes for higher conversions and revenue.>/p>>/div>
+  >/div>
+  >/div>>/section>
+
+  >section class="metrics">>div class="container">
+  >div class="metrics-grid">
+  >div class="metric">>div class="num">10K+>/div>>div class="label">Active Campaigns>/div>>/div>
+  >div class="metric">>div class="num">340%>/div>>div class="label">Avg. ROI Increase>/div>>/div>
+  >div class="metric">>div class="num">2.4M>/div>>div class="label">Conversions Tracked>/div>>/div>
+  >div class="metric">>div class="num">99.9%>/div>>div class="label">Uptime SLA>/div>>/div>
+  >/div>
+  >/div>>/section>
+
+  >section class="pricing" id="pricing">>div class="container">
+  >div class="section-title">
+  >h2>Simple, Transparent Pricing>/h2>
+  >p>Start free. Scale when you're ready.>/p>
+  >/div>
+  >div class="pricing-grid">
+  >div class="price-card">
+  >h3>Free>/h3>
+  >div class="price">$0>span>/month>/span>>/div>
+  >ul>>li>1 AI Agent>/li>>li>100 product scans/mo>/li>>li>Basic analytics>/li>>li>1 channel deployment>/li>>li>Community support>/li>>/ul>
+  >button class="btn btn-outline" style="width:100%">Get Started>/button>
+  >/div>
+  >div class="price-card popular">
+  >h3>Pro>/h3>
+  >div class="price">$49>span>/month>/span>>/div>
+  >ul>>li>6 AI Agents>/li>>li>Unlimited product scans>/li>>li>Advanced analytics + predictions>/li>>li>Multi-channel deployment>/li>>li>A/B testing engine>/li>>li>Priority support>/li>>/ul>
+  >button class="btn btn-primary" style="width:100%">Start Free Trial>/button>
+  >/div>
+  >div class="price-card">
+  >h3>Enterprise>/h3>
+  >div class="price">Custom>/div>
+  >ul>>li>Unlimited agents>/li>>li>Custom AI models>/li>>li>White-label solution>/li>>li>Dedicated account manager>/li>>li>SLA guarantee>/li>>li>API access>/li>>/ul>
+  >button class="btn btn-outline" style="width:100%">Contact Sales>/button>
+  >/div>
+  >/div>
+  >/div>>/section>
+
+  >section class="cta">
+  >div class="cta-glow">>/div>
+  >div class="container">
+  >h2>Ready to Automate Your Affiliate Revenue?>/h2>
+  >p>Join thousands of marketers using AI agents to scale their affiliate income.>/p>
+  >button class="btn btn-primary" style="padding:18px 48px;font-size:1.15rem">Start Your Free Trial>/button>
+  >/div>
+  >/section>
+
+  >footer>>div class="container">
+  >div class="footer-grid">
+  >div class="footer-brand">>div class="logo">AFILL MARK AGENT>/div>>p>AI-powered affiliate marketing automation platform. Built for marketers who want to scale.>/p>>/div>
+  >div class="footer-col">>h4>Product>/h4>>a href="#">Features>/a>>a href="#">Pricing>/a>>a href="#">API Docs>/a>>a href="#">Changelog>/a>>/div>
+  >div class="footer-col">>h4>Company>/h4>>a href="#">About>/a>>a href="#">Blog>/a>>a href="#">Careers>/a>>a href="#">Contact>/a>>/div>
+  >div class="footer-col">>h4>Legal>/h4>>a href="#">Privacy>/a>>a href="#">Terms>/a>>a href="#">Cookies>/a>>/div>
+  >/div>
+  >div class="footer-bottom">&copy; 2026 Afill Mark Agent. All rights reserved.>/div>
+  >/div>>/footer>
+
+  >/body>
+  >/html>
